@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomePage from "./HomePage";
 import AboutPage from "./AboutPage";
 import MapPage from "./MapPage";
-import NoMatch from "../components/NoMatch";
+import NoMatch from "components/NoMatch";
 import ApolloClient from "apollo-boost";
 import { ApolloProvider } from "react-apollo";
+import withRoot from 'components/withRoot';
 
 const client = new ApolloClient({
   uri: "http://127.0.0.1:3000/graphql"
@@ -44,4 +45,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRoot(App);
